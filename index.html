@@ -53,13 +53,34 @@ body{
   overflow-x:hidden;max-width:430px;margin:0 auto;
   -webkit-tap-highlight-color:transparent;
 }
-section{padding:64px 22px;position:relative;isolation:isolate}
+section{padding:64px 22px;position:relative;isolation:isolate;overflow:hidden}
 section::before{
-  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  content:"";position:absolute;inset:-30% -30%;width:160%;height:160%;z-index:-1;pointer-events:none;
   background:
     radial-gradient(72% 48% at 12% 0%,  color-mix(in srgb, var(--olive-deep) 42%, transparent) 0%, transparent 72%),
     radial-gradient(68% 45% at 88% 100%, color-mix(in srgb, var(--navy-deep) 48%, transparent) 0%, transparent 72%);
+  animation:atmDrift 18s ease-in-out infinite alternate;
 }
+@keyframes atmDrift{
+  0%{transform:translate(0,0) scale(1)}
+  33%{transform:translate(4%,-3%) scale(1.03)}
+  66%{transform:translate(-3%,4%) scale(.97)}
+  100%{transform:translate(2%,2%) scale(1.02)}
+}
+#countdown::before{animation-delay:-2s;animation-duration:22s}
+#location::before{animation-delay:-5s;animation-duration:20s;animation-direction:alternate-reverse}
+#calendar::before{animation-delay:-8s;animation-duration:24s}
+#itinerary::before{animation-delay:-3s;animation-duration:19s;animation-direction:alternate-reverse}
+#lodging::before{animation-delay:-7s;animation-duration:23s}
+#kids-policy::before{animation-delay:-10s;animation-duration:21s;animation-direction:alternate-reverse}
+#gifts::before{animation-delay:-1s;animation-duration:25s}
+#album::before{animation-delay:-6s;animation-duration:20s;animation-direction:alternate-reverse}
+#dresscode::before{animation-delay:-4s;animation-duration:22s}
+#family::before{animation-delay:-9s;animation-duration:19s;animation-direction:alternate-reverse}
+#gallery::before{animation-delay:-2s;animation-duration:24s}
+#rsvp::before{animation-delay:-7s;animation-duration:21s;animation-direction:alternate-reverse}
+#footer::before{animation-delay:-5s;animation-duration:23s}
+@media(prefers-reduced-motion:reduce){section::before{animation:none}}
 #countdown::before{background:
   radial-gradient(60% 55% at 85% 10%, color-mix(in srgb, var(--navy-deep) 38%, transparent) 0%, transparent 68%),
   radial-gradient(55% 50% at 15% 90%, color-mix(in srgb, var(--olive-deep) 32%, transparent) 0%, transparent 65%)}
@@ -441,9 +462,24 @@ section::before{
 #env-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:2}
 #env-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:3;opacity:0}
 #env-flash{position:fixed;inset:0;background:#FFFEDE;z-index:9999;opacity:0;pointer-events:none}
-.envelope-hint{position:absolute;bottom:52px;left:50%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--gold-lt);opacity:0;cursor:pointer;white-space:nowrap;z-index:10;text-shadow:0 1px 6px rgba(0,0,0,.6)}
-.envelope-hint::after{content:'';display:block;width:32px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,169,110,.6),transparent);margin:10px auto 0;animation:hintPulse 2.2s ease-in-out infinite}
-@keyframes hintPulse{0%,100%{opacity:.4;width:32px}50%{opacity:1;width:54px}}
+.envelope-hint{
+  position:absolute;bottom:48px;left:50%;transform:translateX(-50%);
+  font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;
+  letter-spacing:4px;text-transform:uppercase;color:var(--cream);
+  opacity:0;cursor:pointer;white-space:nowrap;z-index:10;
+  background:rgba(36,3,3,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(201,169,110,.45);border-radius:40px;
+  padding:14px 32px;
+  box-shadow:0 4px 24px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,254,222,.08);
+  text-shadow:0 1px 4px rgba(0,0,0,.5);
+  animation:hintGlow 2.5s ease-in-out infinite;
+}
+.envelope-hint::before{content:'✦';margin-right:10px;font-size:10px;color:var(--gold);opacity:.8}
+.envelope-hint::after{content:'✦';margin-left:10px;font-size:10px;color:var(--gold);opacity:.8}
+@keyframes hintGlow{
+  0%,100%{box-shadow:0 4px 24px rgba(0,0,0,.35),0 0 0 0 rgba(201,169,110,0);border-color:rgba(201,169,110,.45)}
+  50%{box-shadow:0 4px 24px rgba(0,0,0,.35),0 0 18px 4px rgba(201,169,110,.18);border-color:rgba(201,169,110,.7)}
+}
 
 /* ── BRILLO QUE RECORRE EL TEXTO ───────────────────────── */
 /* El degradado (olivo + dorado + navy) se recorta contra el texto y se
