@@ -57,8 +57,8 @@ section{padding:64px 22px;position:relative;isolation:isolate}
 section::before{
   content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:
-    radial-gradient(70% 45% at 12% 0%,  color-mix(in srgb, var(--olive-deep) 26%, transparent) 0%, transparent 70%),
-    radial-gradient(65% 42% at 88% 100%, color-mix(in srgb, var(--navy-deep) 30%, transparent) 0%, transparent 70%);
+    radial-gradient(72% 48% at 12% 0%,  color-mix(in srgb, var(--olive-deep) 42%, transparent) 0%, transparent 72%),
+    radial-gradient(68% 45% at 88% 100%, color-mix(in srgb, var(--navy-deep) 48%, transparent) 0%, transparent 72%);
 }
 :focus-visible{outline:2px solid var(--gold-lt);outline-offset:3px;border-radius:4px}
 
@@ -157,7 +157,7 @@ section::before{
 /* ── HELPERS ──────────────────────────────────────────── */
 .lbl{font-size:11px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);text-align:center;display:block;line-height:1.5;max-width:300px;margin-left:auto;margin-right:auto;text-wrap:balance}
 .ttl{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;text-align:center;color:var(--cream);line-height:1.25;margin-top:6px}
-.gline{width:64px;height:1px;background:linear-gradient(to right,transparent,var(--olive),var(--gold),var(--navy),transparent);margin:18px auto}
+.gline{width:72px;height:2px;border-radius:2px;background:linear-gradient(to right,transparent,var(--olive),var(--gold),var(--navy),transparent);margin:18px auto;opacity:.95}
 
 .btn{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:15px 16px;border:1px solid var(--gold);border-radius:7px;background:transparent;color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:12px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;text-decoration:none;cursor:pointer;-webkit-appearance:none;position:relative;overflow:hidden;transition:background .25s, transform .2s var(--spring)}
 .btn:active{transform:scale(.96);background:rgba(201,169,110,.08)}
@@ -197,7 +197,7 @@ section::before{
 /* ── COUNTDOWN ────────────────────────────────────────── */
 #countdown{background:var(--ink2);padding:54px 22px;border-top:1px solid rgba(201,169,110,.1);border-bottom:1px solid rgba(201,169,110,.1)}
 .cd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:30px}
-.cd-box{text-align:center;padding:18px 6px 14px;background:linear-gradient(160deg,color-mix(in srgb,var(--navy-deep) 30%,transparent),rgba(201,169,110,.05));border:1px solid rgba(201,169,110,.16);border-radius:10px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);transition:transform .3s var(--spring)}
+.cd-box{text-align:center;padding:18px 6px 14px;background:linear-gradient(160deg,color-mix(in srgb,var(--navy-deep) 52%,transparent),rgba(201,169,110,.06));border:1px solid rgba(201,169,110,.16);border-radius:10px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);transition:transform .3s var(--spring)}
 .cd-box:active{transform:scale(.93)}
 .cd-num{font-family:'Cormorant Garamond',serif;font-variant-numeric:lining-nums tabular-nums;font-size:34px;font-weight:500;color:var(--gold);display:block;line-height:1;will-change:contents}
 .cd-lbl{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--cream);opacity:.66;display:block;margin-top:5px}
@@ -206,7 +206,7 @@ section::before{
 #location{background:var(--ink)}
 .loc-card{background:var(--ink2);border:1px solid rgba(201,169,110,.16);border-radius:12px;padding:28px 22px;margin-top:20px;position:relative;overflow:hidden}
 .loc-card::after{content:"";position:absolute;top:0;left:14%;right:14%;height:1px;pointer-events:none;
-  background:linear-gradient(to right,transparent,var(--olive),var(--gold),var(--navy),transparent);opacity:.55}
+  background:linear-gradient(to right,transparent,var(--olive),var(--gold),var(--navy),transparent);opacity:.8}
 .loc-card::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent)}
 .loc-type{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .loc-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--cream);line-height:1.35}
@@ -225,8 +225,8 @@ section::before{
 .tl-row{display:flex;align-items:flex-start;gap:14px;margin-bottom:30px}
 .tl-t{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;color:var(--gold);width:48px;flex-shrink:0;text-align:right;line-height:1.3;padding-top:3px}
 .tl-dot{width:10px;height:10px;border-radius:50%;border:1px solid var(--gold);background:var(--ink);flex-shrink:0;margin-top:5px;position:relative;z-index:1;transform:scale(0);transition:transform .4s var(--spring)}
-.tl-row:nth-child(3) .tl-dot{border-color:var(--olive);box-shadow:0 0 0 3px color-mix(in srgb,var(--olive-deep) 45%,transparent)}
-.tl-row:nth-child(4) .tl-dot{border-color:var(--navy);box-shadow:0 0 0 3px color-mix(in srgb,var(--navy-deep) 50%,transparent)}
+.tl-row:nth-child(3) .tl-dot{border-color:var(--olive);background:color-mix(in srgb,var(--olive-deep) 70%,var(--ink));box-shadow:0 0 0 4px color-mix(in srgb,var(--olive-deep) 62%,transparent)}
+.tl-row:nth-child(4) .tl-dot{border-color:var(--navy);background:color-mix(in srgb,var(--navy-deep) 70%,var(--ink));box-shadow:0 0 0 4px color-mix(in srgb,var(--navy-deep) 66%,transparent)}
 .tl-row:nth-child(2) .tl-dot{box-shadow:0 0 0 3px rgba(201,169,110,.28)}
 .tl-dot.on{transform:scale(1)}
 .tl-ev{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--cream);font-weight:400;line-height:1.2}
@@ -243,7 +243,7 @@ section::before{
 
 /* ── KIDS POLICY ──────────────────────────────────────── */
 #kids-policy{background:var(--ink)}
-.kp-card{background:linear-gradient(155deg,color-mix(in srgb,var(--olive-deep) 26%,transparent),var(--ink3) 62%);border:1px solid color-mix(in srgb,var(--olive) 34%,transparent);border-radius:12px;padding:34px 24px 28px;margin-top:26px;text-align:center;position:relative;overflow:hidden}
+.kp-card{background:linear-gradient(155deg,color-mix(in srgb,var(--olive-deep) 46%,transparent),var(--ink3) 64%);border:1px solid color-mix(in srgb,var(--olive) 48%,transparent);border-radius:12px;padding:34px 24px 28px;margin-top:26px;text-align:center;position:relative;overflow:hidden}
 .kp-card::before{content:'';position:absolute;top:0;left:15%;right:15%;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent)}
 .kp-icons{display:flex;justify-content:center;gap:28px;margin-bottom:22px;color:var(--gold);opacity:.8}
 .kp-icons svg{width:30px;height:30px}
@@ -317,17 +317,15 @@ section::before{
 .dc-svg{height:150px;width:auto;color:var(--gold-lt)}
 .dc-fig-name{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--cream);letter-spacing:3px;margin-top:14px;text-transform:uppercase}
 .dc-fig-hint{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--gold);margin-top:6px;text-align:center;line-height:1.5}
-.dress-reserved{font-size:12.5px;color:var(--cream);opacity:.78;line-height:1.8;max-width:350px;margin:30px auto 0}
+.dress-reserved{font-size:15px;color:var(--cream);opacity:.9;line-height:1.75;max-width:340px;margin:30px auto 0}
 .dress-reserved b{color:var(--gold);font-weight:400}
-.dress-quotes{max-width:370px;margin:26px auto 0;padding-top:24px;border-top:1px solid rgba(201,169,110,.2);display:flex;flex-direction:column;gap:16px}
-.dress-quotes p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;line-height:1.5;color:var(--gold-lt)}
 
 /* ── FAMILY ───────────────────────────────────────────── */
 #family{background:var(--ink)}
 .fam-ttl{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:300;font-style:italic;color:var(--gold);text-align:center;margin:30px 0 16px}
 .fam-card{background:var(--ink2);border:1px solid rgba(201,169,110,.13);border-radius:10px;padding:18px 20px;margin-bottom:10px;text-align:center;position:relative;overflow:hidden;transition:transform .3s var(--spring)}
 .fam-card::after{content:"";position:absolute;left:0;top:18%;bottom:18%;width:2px;pointer-events:none;
-  background:linear-gradient(to bottom,transparent,var(--olive),transparent);opacity:.6}
+  background:linear-gradient(to bottom,transparent,var(--olive),transparent);opacity:.85;width:3px}
 .fam-card::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(to right,transparent,rgba(201,169,110,.25),transparent)}
 .fam-card:active{transform:scale(.97)}
 .fam-role{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
@@ -366,7 +364,7 @@ section::before{
 .rsvp-toggle-btn{flex:1;padding:13px 8px;border:1.5px solid rgba(201,169,110,.4);background:rgba(245,240,232,.06);cursor:pointer;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;font-weight:600;color:var(--cream);border-radius:10px;transition:all .25s}
 .rsvp-toggle-btn:disabled{opacity:.66;cursor:not-allowed}
 .rsvp-toggle-btn.rsvp-toggle-selected-yes{background:rgba(201,169,110,.18);border-color:var(--gold);color:var(--gold-lt)}
-.rsvp-toggle-btn.rsvp-toggle-selected-no{background:color-mix(in srgb,var(--navy-deep) 55%,transparent);border-color:var(--navy);color:#DCE7F3}
+.rsvp-toggle-btn.rsvp-toggle-selected-no{background:color-mix(in srgb,var(--navy-deep) 78%,transparent);border-color:var(--navy);color:#E4EDF7}
 .rsvp-fields{display:flex;flex-direction:column;gap:10px;max-width:380px;margin:0 auto 18px}
 .rsvp-input{width:100%;padding:14px 18px;border:1.5px solid rgba(201,169,110,.3);border-radius:10px;background:rgba(245,240,232,.06);font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--cream);outline:none;transition:border-color .3s,background .3s;-webkit-appearance:none;min-height:50px}
 .rsvp-input:focus{border-color:var(--gold);background:rgba(245,240,232,.10)}
@@ -407,6 +405,50 @@ section::before{
 .envelope-hint{position:absolute;bottom:52px;left:50%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--gold-lt);opacity:0;cursor:pointer;white-space:nowrap;z-index:10;text-shadow:0 1px 6px rgba(0,0,0,.6)}
 .envelope-hint::after{content:'';display:block;width:32px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,169,110,.6),transparent);margin:10px auto 0;animation:hintPulse 2.2s ease-in-out infinite}
 @keyframes hintPulse{0%,100%{opacity:.4;width:32px}50%{opacity:1;width:54px}}
+
+/* ── BRILLO QUE RECORRE EL TEXTO ───────────────────────── */
+/* El degradado (olivo + dorado + navy) se recorta contra el texto y se
+   desplaza en bucle. El color solido de respaldo va primero, por si el
+   navegador no soporta background-clip:text. */
+.shine{
+  color:var(--gold-lt);
+  background:linear-gradient(100deg,
+    var(--olive)   0%,
+    var(--gold-lt) 22%,
+    #FFF8E2        34%,
+    var(--gold)    46%,
+    var(--navy)    62%,
+    var(--gold-lt) 80%,
+    var(--olive)  100%);
+  background-size:280% 100%;
+  animation:shineMove 7s linear infinite;
+}
+@supports (background-clip:text) or (-webkit-background-clip:text){
+  .shine{
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent;
+  }
+}
+@keyframes shineMove{
+  0%  {background-position:  0% 50%}
+  100%{background-position:280% 50%}
+}
+/* en reposo el brillo se detiene, pero el degradado se queda */
+@media (prefers-reduced-motion:reduce){
+  .shine{animation:none;background-position:38% 50%}
+}
+/* variante para las versalitas pequenas: mas contraste, menos recorrido */
+.shine-lbl{
+  color:var(--gold);
+  background:linear-gradient(100deg,
+    var(--olive) 0%, var(--gold) 26%, #FFF3D0 40%, var(--gold) 54%, var(--navy) 74%, var(--olive) 100%);
+  background-size:260% 100%;
+  animation:shineMove 8.5s linear infinite;
+}
+@supports (background-clip:text) or (-webkit-background-clip:text){
+  .shine-lbl{-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+}
+@media (prefers-reduced-motion:reduce){.shine-lbl{animation:none;background-position:40% 50%}}
 
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important}}
   </style>
@@ -461,7 +503,7 @@ section::before{
     <div class="h-div" id="hDiv"><span class="h-div-dot">✦ · ✦</span></div>
     <h1 class="h-title">
       <div class="h-clip"><span class="h-name" id="hN1">Ligia</span></div>
-      <div class="h-amp-clip"><span class="h-amp" id="hAmp">&amp;</span></div>
+      <div class="h-amp-clip"><span class="h-amp shine" id="hAmp">&amp;</span></div>
       <div class="h-clip"><span class="h-name" id="hN2">Guillermo</span></div>
     </h1>
     <div class="gline" style="margin-top:28px" id="hLine"></div>
@@ -493,7 +535,7 @@ section::before{
 <!-- ═══════════════ 3. UBICACIONES ═══════════════════ -->
 <section id="location">
   <span class="lbl">¿Dónde y cuándo?</span>
-  <h2 class="ttl">La Celebración</h2>
+  <h2 class="ttl shine">La Celebración</h2>
   <div class="gline"></div>
 
   <div class="loc-card">
@@ -534,8 +576,8 @@ section::before{
 
 <!-- ═══════════════ 5. ITINERARIO ════════════════════ -->
 <section id="itinerary">
-  <span class="lbl">El gran día</span>
-  <h2 class="ttl">Itinerario</h2>
+  <span class="lbl shine-lbl">El gran día</span>
+  <h2 class="ttl shine">Itinerario</h2>
   <div class="gline"></div>
   <div class="timeline" id="tlWrap">
     <div class="tl-track" id="tlTrack"></div>
@@ -582,7 +624,7 @@ section::before{
 <!-- ═══════════════ 8. MESA DE REGALOS ═══════════════ -->
 <section id="gifts">
   <span class="lbl">Tu presencia es nuestro mejor regalo</span>
-  <h2 class="ttl">Mesa de Regalos</h2>
+  <h2 class="ttl shine">Mesa de Regalos</h2>
   <div class="gline"></div>
   <p class="gf-sub">Si deseas obsequiarnos algo especial,<br>compartimos contigo nuestras opciones.</p>
 
@@ -701,11 +743,7 @@ section::before{
       <div class="dc-fig-hint">Traje formal<br>Corbata o moño</div>
     </div>
   </div>
-  <p class="dress-reserved">Los tonos <b>blanco, beige, ivory</b> y sus derivados están reservados exclusivamente para la novia.</p>
-  <div class="dress-quotes">
-    <p>&ldquo;Arréglate bonito, que habrá fotógrafo y gente chismosa.&rdquo;</p>
-    <p>&ldquo;Trae tu mejor versión y tus pasos prohibidos.&rdquo;</p>
-  </div>
+  <p class="dress-reserved">Por favor, <b>evitar el color blanco</b>: está reservado para la novia.</p>
 </section>
 
 <!-- ═══════════════ 11. FAMILIA ══════════════════════ -->
@@ -751,8 +789,8 @@ section::before{
 
 <!-- ═══════════════ 13. RSVP ═════════════════════════ -->
 <section id="rsvp">
-  <span class="lbl">Confirmación de asistencia</span>
-  <h2 class="ttl">¿Nos acompañas?</h2>
+  <span class="lbl shine-lbl">Confirmación de asistencia</span>
+  <h2 class="ttl shine">¿Nos acompañas?</h2>
   <div class="gline"></div>
   <p class="rsvp-sub">Confirma antes del<br><span class="rsvp-dl">6 de Diciembre de 2026</span></p>
 
@@ -782,7 +820,7 @@ section::before{
 <!-- ═══════════════ 14. FOOTER ═══════════════════════ -->
 <footer id="footer">
   <div class="ft-orn">✦ · ✦ · ✦</div>
-  <div class="ft-nms">Ligia <span style="padding:0 .12em">&amp;</span> Guillermo</div>
+  <div class="ft-nms shine">Ligia <span style="padding:0 .12em">&amp;</span> Guillermo</div>
   <div class="gline" style="margin-top:22px"></div>
   <p class="ft-dt">20 · Febrero · 2027</p>
   <p class="ft-note">Temixco · Morelos<br>Con amor, los novios</p>
@@ -954,7 +992,7 @@ function scrollAnims() {
   gsap.from('.dc-sub', { opacity:0, y:18, duration:.65, ease, immediateRender:false, scrollTrigger:{ trigger:'#dresscode', start:'top 82%', once:true } });
   gsap.from('.dc-fig', { opacity:0, y:30, duration:.8, stagger:.18, ease, immediateRender:false, scrollTrigger:{ trigger:'.dc-figures', start:'top 84%', once:true } });
   gsap.fromTo('.dc-divider', {scaleY:0}, {scaleY:1, duration:1, ease, immediateRender:false, scrollTrigger:{ trigger:'.dc-figures', start:'top 84%', once:true }});
-  gsap.from(['.dress-reserved','.dress-quotes p'], { opacity:0, y:16, duration:.6, stagger:.12, ease, immediateRender:false, scrollTrigger:{ trigger:'.dress-reserved', start:'top 88%', once:true } });
+  gsap.from('.dress-reserved', { opacity:0, y:16, duration:.6, ease, immediateRender:false, scrollTrigger:{ trigger:'.dress-reserved', start:'top 88%', once:true } });
 
   gsap.from('.fam-ttl', { opacity:0, y:18, duration:.6, stagger:.2, ease, immediateRender:false, scrollTrigger:{ trigger:'#family', start:'top 78%', once:true } });
   gsap.from('.fam-card', { opacity:0, y:20, duration:.55, stagger:.08, ease, immediateRender:false, scrollTrigger:{ trigger:'#family', start:'top 78%', once:true } });
