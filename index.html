@@ -59,7 +59,7 @@ section{padding:64px 22px}
 #prog{position:fixed;top:0;left:0;height:2px;width:0%;z-index:1000;background:linear-gradient(to right,var(--gold),var(--gold-lt));box-shadow:0 0 10px rgba(201,169,110,.5);transition:width .08s linear;pointer-events:none}
 
 /* ── MUSIC BTN ────────────────────────────────────────── */
-.music-btn{position:fixed;bottom:22px;right:22px;width:46px;height:46px;border-radius:50%;background:rgba(51,16,15,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(201,169,110,.35);color:var(--gold);font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:999;box-shadow:0 4px 24px rgba(0,0,0,.45);transition:all .3s var(--spring)}
+.music-btn{position:fixed;bottom:16px;right:16px;width:44px;height:44px;border-radius:50%;background:rgba(51,16,15,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(201,169,110,.35);color:var(--gold);font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:999;box-shadow:0 4px 24px rgba(0,0,0,.45);transition:all .3s var(--spring)}
 .music-btn:active{transform:scale(.88)}
 .music-btn.on{border-color:var(--gold);background:rgba(201,169,110,.14);animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,169,110,.35),0 4px 24px rgba(0,0,0,.45)}50%{box-shadow:0 0 0 9px rgba(201,169,110,0),0 4px 24px rgba(0,0,0,.45)}}
@@ -69,7 +69,7 @@ section{padding:64px 22px}
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
 /* ── HELPERS ──────────────────────────────────────────── */
-.lbl{font-size:11px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);text-align:center;display:block;line-height:1.5}
+.lbl{font-size:11px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);text-align:center;display:block;line-height:1.5;max-width:300px;margin-left:auto;margin-right:auto;text-wrap:balance}
 .ttl{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;text-align:center;color:var(--cream);line-height:1.25;margin-top:6px}
 .gline{width:50px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:18px auto}
 
@@ -113,7 +113,7 @@ section{padding:64px 22px}
 .cd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:30px}
 .cd-box{text-align:center;padding:18px 6px 14px;background:rgba(201,169,110,.05);border:1px solid rgba(201,169,110,.16);border-radius:10px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);transition:transform .3s var(--spring)}
 .cd-box:active{transform:scale(.93)}
-.cd-num{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;color:var(--gold);display:block;line-height:1;will-change:contents}
+.cd-num{font-family:'Cormorant Garamond',serif;font-variant-numeric:lining-nums tabular-nums;font-size:34px;font-weight:500;color:var(--gold);display:block;line-height:1;will-change:contents}
 .cd-lbl{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--cream);opacity:.66;display:block;margin-top:5px}
 
 /* ── LOCATION ─────────────────────────────────────────── */
@@ -122,9 +122,9 @@ section{padding:64px 22px}
 .loc-card::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent)}
 .loc-type{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .loc-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--cream);line-height:1.35}
-.loc-time{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:300;color:var(--gold);line-height:1;margin:16px 0 4px}
+.loc-time{font-family:'Cormorant Garamond',serif;font-variant-numeric:lining-nums;font-size:46px;font-weight:500;color:var(--gold);line-height:1;margin:16px 0 4px}
 .loc-time em{font-family:'Cormorant Garamond',serif;font-style:normal;font-size:13px;letter-spacing:2px;color:var(--gold-lt);opacity:.7;vertical-align:middle}
-.loc-addr{font-size:12px;line-height:1.8;color:var(--cream);opacity:.55;margin-bottom:22px}
+.loc-addr{font-size:14px;line-height:1.75;color:#E4DCC0;opacity:.92;margin-bottom:22px}
 
 /* ── CALENDAR ─────────────────────────────────────────── */
 #calendar{background:var(--ink3);padding:54px 22px;text-align:center;border-top:1px solid rgba(201,169,110,.09);border-bottom:1px solid rgba(201,169,110,.09)}
@@ -133,7 +133,7 @@ section{padding:64px 22px}
 /* ── ITINERARY ────────────────────────────────────────── */
 #itinerary{background:var(--ink)}
 .timeline{margin-top:36px;position:relative}
-.tl-track{position:absolute;left:54px;top:8px;width:1px;height:0;background:linear-gradient(to bottom,rgba(201,169,110,.45) 0%,rgba(201,169,110,.45) 90%,transparent 100%);transform-origin:top}
+.tl-track{position:absolute;left:66px;top:8px;width:1px;height:0;background:linear-gradient(to bottom,rgba(201,169,110,.45) 0%,rgba(201,169,110,.45) 90%,transparent 100%);transform-origin:top}
 .tl-row{display:flex;align-items:flex-start;gap:14px;margin-bottom:30px}
 .tl-t{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;color:var(--gold);width:48px;flex-shrink:0;text-align:right;line-height:1.3;padding-top:3px}
 .tl-dot{width:9px;height:9px;border-radius:50%;border:1px solid var(--gold);background:var(--ink);flex-shrink:0;margin-top:5px;position:relative;z-index:1;transform:scale(0);transition:transform .4s var(--spring)}
@@ -217,7 +217,7 @@ section{padding:64px 22px}
 .fam-card:active{transform:scale(.97)}
 .fam-role{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
 .fam-nms{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--cream);line-height:1.6}
-.fam-sep{opacity:.62;font-size:12px;opacity:.4}
+.fam-sep{opacity:.75;color:var(--gold);font-size:12px;opacity:.4}
 .fam-cross{height:.82em;width:auto;fill:var(--gold);vertical-align:-.04em;margin-left:.12em;opacity:.9}
 .sdiv{width:30px;height:1px;background:rgba(201,169,110,.18);margin:22px auto}
 
@@ -634,7 +634,7 @@ section{padding:64px 22px}
 <!-- ═══════════════ 14. FOOTER ═══════════════════════ -->
 <footer id="footer">
   <div class="ft-orn">✦ · ✦ · ✦</div>
-  <div class="ft-nms">Ligia &amp; Guillermo</div>
+  <div class="ft-nms">Ligia <span style="padding:0 .12em">&amp;</span> Guillermo</div>
   <div class="gline" style="margin-top:22px"></div>
   <p class="ft-dt">20 · Febrero · 2027</p>
   <p class="ft-note">Temixco · Morelos<br>Con amor, los novios</p>
