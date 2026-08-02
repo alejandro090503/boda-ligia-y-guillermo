@@ -1,6 +1,5 @@
 .vercel
+.env*.local
+.env.local
 .DS_Store
 Thumbs.db
-
-.vercel
-.env*
