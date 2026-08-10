@@ -379,6 +379,20 @@ section::before{
 .dc-fig-hint{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--gold);margin-top:6px;text-align:center;line-height:1.5}
 .dress-reserved{font-size:15px;color:var(--cream);opacity:.9;line-height:1.75;max-width:340px;margin:30px auto 0}
 .dress-reserved b{color:var(--gold);font-weight:400}
+.dc-reveal-btn{display:inline-flex;align-items:center;gap:8px;margin:30px auto 0;padding:12px 32px;border:1.5px solid var(--gold-lt);border-radius:40px;background:transparent;color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:16px;letter-spacing:2px;cursor:pointer;position:relative;overflow:hidden;transition:all .4s ease}
+.dc-reveal-btn::before{content:"";position:absolute;inset:-2px;border-radius:42px;background:conic-gradient(from 0deg,transparent 0%,var(--gold-lt) 25%,transparent 50%,var(--gold-lt) 75%,transparent 100%);opacity:.4;animation:dcGlow 3s linear infinite;z-index:-1}
+@keyframes dcGlow{to{transform:rotate(360deg)}}
+.dc-reveal-btn:hover,.dc-reveal-btn:active{background:rgba(164,128,70,.12);border-color:var(--gold)}
+.dc-reveal-btn .dc-sparkle{display:inline-block;animation:dcSparkle 2s ease-in-out infinite}
+@keyframes dcSparkle{0%,100%{opacity:.5;transform:scale(.9)}50%{opacity:1;transform:scale(1.2)}}
+.dc-notices{max-height:0;overflow:hidden;opacity:0;transition:max-height .8s cubic-bezier(.25,.46,.45,.94),opacity .6s .15s ease;max-width:380px;margin:0 auto}
+.dc-notices.open{max-height:600px;opacity:1}
+.dc-notice{text-align:center;padding:16px 12px;border-bottom:1px solid var(--gold-dim)}
+.dc-notice:last-child{border-bottom:none}
+.dc-notice-icon{font-size:22px;margin-bottom:6px}
+.dc-notice-text{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--cream);line-height:1.7}
+.dc-notice-text b{color:var(--gold);font-weight:400}
+.dc-blue-swatch{width:60px;height:60px;border-radius:50%;background:#6B9AC4;margin:8px auto;border:2px solid var(--gold-dim);box-shadow:0 2px 12px rgba(107,154,196,.3)}
 
 /* ── FAMILY ───────────────────────────────────────────── */
 #family{background:var(--ink)}
@@ -813,7 +827,26 @@ section::before{
       <div class="dc-fig-hint">Traje formal<br>Corbata o moño</div>
     </div>
   </div>
-  <p class="dress-reserved">Por favor, <b>evitar el color blanco</b>: está reservado para la novia.</p>
+  <div style="text-align:center">
+    <button class="dc-reveal-btn" id="dcRevealBtn" aria-expanded="false">
+      <span class="dc-sparkle">✦</span> Toca para abrir <span class="dc-sparkle">✦</span>
+    </button>
+  </div>
+  <div class="dc-notices" id="dcNotices">
+    <div class="dc-notice">
+      <div class="dc-notice-icon">🤍</div>
+      <p class="dc-notice-text">Por favor, <b>evitar el color blanco</b>:<br>está reservado para la novia.</p>
+    </div>
+    <div class="dc-notice">
+      <div class="dc-notice-icon">💙</div>
+      <p class="dc-notice-text">El tono <b>azul dusty blue</b> está reservado<br>para las damas de honor.</p>
+      <div class="dc-blue-swatch"></div>
+    </div>
+    <div class="dc-notice">
+      <div class="dc-notice-icon">👟</div>
+      <p class="dc-notice-text">A partir de las <b>9:30 p.m.</b>, los invitados podrán<br>usar tenis en color <b>negro o blanco</b> exclusivamente.<br><em style="font-size:13px;opacity:.75">Te recomendamos traerlos listos para disfrutar la velada.</em></p>
+    </div>
+  </div>
 </section>
 
 <div class="foto-band" style="--fb-from:var(--ink);--fb-to:var(--ink)">
@@ -1080,7 +1113,13 @@ function scrollAnims() {
   gsap.from('.dc-sub', { opacity:0, y:18, duration:.65, ease, immediateRender:false, scrollTrigger:{ trigger:'#dresscode', start:'top 82%', once:true } });
   gsap.from('.dc-fig', { opacity:0, y:30, duration:.8, stagger:.18, ease, immediateRender:false, scrollTrigger:{ trigger:'.dc-figures', start:'top 84%', once:true } });
   gsap.fromTo('.dc-divider', {scaleY:0}, {scaleY:1, duration:1, ease, immediateRender:false, scrollTrigger:{ trigger:'.dc-figures', start:'top 84%', once:true }});
-  gsap.from('.dress-reserved', { opacity:0, y:16, duration:.6, ease, immediateRender:false, scrollTrigger:{ trigger:'.dress-reserved', start:'top 88%', once:true } });
+  gsap.from('.dc-reveal-btn', { opacity:0, y:16, duration:.6, ease, immediateRender:false, scrollTrigger:{ trigger:'.dc-reveal-btn', start:'top 88%', once:true } });
+  document.getElementById('dcRevealBtn').addEventListener('click', function(){
+    var n = document.getElementById('dcNotices');
+    var open = n.classList.toggle('open');
+    this.setAttribute('aria-expanded', open);
+    if(open) this.style.display='none';
+  });
 
   gsap.from('.fam-ttl', { opacity:0, y:18, duration:.6, stagger:.2, ease, immediateRender:false, scrollTrigger:{ trigger:'#family', start:'top 78%', once:true } });
   gsap.from('.fam-card', { opacity:0, y:20, duration:.55, stagger:.08, ease, immediateRender:false, scrollTrigger:{ trigger:'#family', start:'top 78%', once:true } });
