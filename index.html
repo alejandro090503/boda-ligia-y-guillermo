@@ -450,7 +450,7 @@ section::before{
 .rsvp-fields{display:flex;flex-direction:column;gap:10px;max-width:380px;margin:0 auto 18px}
 .rsvp-input{width:100%;padding:14px 18px;border:1.5px solid rgba(164,128,70,.3);border-radius:10px;background:rgba(245,240,232,.06);font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--cream);outline:none;transition:border-color .3s,background .3s;-webkit-appearance:none;min-height:50px}
 .rsvp-input:focus{border-color:var(--gold);background:rgba(245,240,232,.10)}
-.rsvp-input::placeholder{color:rgba(245,240,232,.4);font-style:italic}
+.rsvp-input::placeholder{color:rgba(58,58,50,.55);font-style:italic}
 #rsvpSubmitBtn:disabled{opacity:.55;cursor:not-allowed}
 #rsvp-feedback{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;font-weight:600;text-align:center;margin:16px auto 0;max-width:380px;line-height:1.5;min-height:18px;color:var(--gold-lt)}
 .fg{margin-bottom:22px}
@@ -630,7 +630,7 @@ section::before{
 </section>
 
 <div class="foto-band" style="--fb-from:var(--ink);--fb-to:var(--ink)">
-  <img src="fb2.jpg" alt="Ivonne y Guillermo en el puente" loading="lazy" style="object-position:center 40%">
+  <img src="fb2.jpg" alt="Guillermo dándole un beso a Ivonne en el bosque" loading="lazy" style="object-position:center 30%">
   <div class="foto-band-overlay"></div>
 </div>
 
@@ -696,7 +696,7 @@ section::before{
 </section>
 
 <div class="foto-band" style="--fb-from:var(--ink);--fb-to:var(--ink)">
-  <img src="fb1.jpg" alt="Ivonne y Guillermo caminando entre pinos" loading="lazy" style="object-position:center 35%">
+  <img src="fb1.jpg" alt="Ivonne y Guillermo jugando junto al río" loading="lazy" style="object-position:center 45%">
   <div class="foto-band-overlay"></div>
   <p class="foto-band-caption">Nuestro camino juntos</p>
 </div>
@@ -912,7 +912,8 @@ section::before{
   <span class="lbl shine-lbl">Confirmación de asistencia</span>
   <h2 class="ttl shine">¿Nos acompañas?</h2>
   <div class="gline"></div>
-  <p class="rsvp-sub">Confirma antes del<br><span class="rsvp-dl">6 de Diciembre de 2026</span></p>
+  <p class="rsvp-sub">Por favor confirma tu asistencia <b>antes del</b><br><span class="rsvp-dl">6 de Diciembre de 2026</span></p>
+  <p class="rsvp-note" style="font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--cream);opacity:.85;max-width:340px;margin:12px auto 0;line-height:1.7;text-align:center">Únicamente los nombres registrados en los campos de abajo serán considerados en la lista de confirmados.</p>
 
   <div class="rsvp-std">
     <p id="rsvp-pases-note" style="display:none"></p>
@@ -1304,7 +1305,7 @@ aud.addEventListener('pause', ()=>{ playing = false; setVinyl(false); });
       const inp = document.createElement('input');
       inp.type = 'text';
       inp.className = 'rsvp-input';
-      inp.placeholder = n === 1 ? 'Tu nombre completo' : 'Invitado ' + (i+1);
+      inp.placeholder = n === 1 ? 'Escribe tu nombre completo' : 'Nombre completo del invitado ' + (i+1);
       inp.autocomplete = 'off';
       inp.maxLength = 60;
       inp.value = savedNames[i] || '';
