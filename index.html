@@ -386,7 +386,6 @@ section::before{
 .dc-reveal-btn .dc-sparkle{display:inline-block;animation:dcSparkle 2s ease-in-out infinite}
 @keyframes dcSparkle{0%,100%{opacity:.5;transform:scale(.9)}50%{opacity:1;transform:scale(1.2)}}
 .dc-notices{max-height:0;overflow:hidden;opacity:0;transition:max-height .8s cubic-bezier(.25,.46,.45,.94),opacity .6s .15s ease;max-width:380px;margin:0 auto}
-.dc-notices.open{max-height:600px;opacity:1}
 .dc-notice{text-align:center;padding:16px 12px;border-bottom:1px solid var(--gold-dim)}
 .dc-notice:last-child{border-bottom:none}
 .dc-notice-icon{font-size:22px;margin-bottom:6px}
@@ -1116,9 +1115,9 @@ function scrollAnims() {
   gsap.from('.dc-reveal-btn', { opacity:0, y:16, duration:.6, ease, immediateRender:false, scrollTrigger:{ trigger:'.dc-reveal-btn', start:'top 88%', once:true } });
   document.getElementById('dcRevealBtn').addEventListener('click', function(){
     var n = document.getElementById('dcNotices');
-    var open = n.classList.toggle('open');
-    this.setAttribute('aria-expanded', open);
-    if(open) this.style.display='none';
+    n.style.maxHeight = '600px';
+    n.style.opacity = '1';
+    this.style.display = 'none';
   });
 
   gsap.from('.fam-ttl', { opacity:0, y:18, duration:.6, stagger:.2, ease, immediateRender:false, scrollTrigger:{ trigger:'#family', start:'top 78%', once:true } });
