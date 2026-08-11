@@ -1207,7 +1207,17 @@ function setVinyl(on){
 function toggleMusic(){
   if (playing) { aud.pause(); } else { aud.play().catch(()=>{}); }
 }
-window.startMusic = function(){ if (playing) return; aud.play().catch(()=>{}); };
+window.startMusic = function(){
+  if (playing) return;
+  aud.preload = 'auto';
+  aud.load();
+  function tryPlay(){
+    aud.play().catch(function(){
+      setTimeout(tryPlay, 300);
+    });
+  }
+  tryPlay();
+};
 // el estado del disco lo dicta el propio <audio>, no una bandera aparte
 aud.addEventListener('play',  ()=>{ playing = true;  setVinyl(true);  });
 aud.addEventListener('pause', ()=>{ playing = false; setVinyl(false); });
