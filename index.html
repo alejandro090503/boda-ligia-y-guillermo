@@ -454,6 +454,13 @@ section::before{
 .rsvp-toggle-btn:disabled{opacity:.66;cursor:not-allowed}
 .rsvp-toggle-btn.rsvp-toggle-selected-yes{background:rgba(164,128,70,.18);border-color:var(--gold);color:var(--gold-lt)}
 .rsvp-toggle-btn.rsvp-toggle-selected-no{background:color-mix(in srgb,var(--navy-deep) 78%,transparent);border-color:var(--navy);color:#E4EDF7}
+.rsvp-gracias{max-width:380px;margin:0 auto;padding:26px 22px;background:var(--gold-dim);border:1.5px solid rgba(164,128,70,.42);border-radius:14px;text-align:center}
+.rsvp-gracias-icon{color:var(--gold-lt);margin:0 auto 10px;display:block}
+.rsvp-gracias-title{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:700;color:var(--gold-lt);margin-bottom:8px;line-height:1.35}
+.rsvp-gracias-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15.5px;color:var(--cream);opacity:.92;line-height:1.6;margin-bottom:18px}
+.rsvp-editar-btn{padding:11px 22px;border:1.5px solid rgba(164,128,70,.5);background:transparent;cursor:pointer;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--gold-lt);border-radius:24px;transition:all .25s}
+.rsvp-editar-btn:hover{background:rgba(164,128,70,.16)}
+.rsvp-editar-btn:disabled{opacity:.45;cursor:not-allowed}
 .rsvp-fields{display:flex;flex-direction:column;gap:10px;max-width:380px;margin:0 auto 18px}
 .rsvp-input{width:100%;padding:14px 18px;border:1.5px solid rgba(164,128,70,.3);border-radius:10px;background:rgba(245,240,232,.06);font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--cream);outline:none;transition:border-color .3s,background .3s;-webkit-appearance:none;min-height:50px}
 .rsvp-input:focus{border-color:var(--gold);background:rgba(245,240,232,.10)}
@@ -843,7 +850,7 @@ section::before{
   <div class="sdiv"></div>
 
   <p class="fam-ttl">Padrinos de Velación</p>
-  <div class="fam-card"><p class="fam-nms">Las dos parejas de padres</p></div>
+  <div class="fam-card"><p class="fam-nms">Nuestros amados padres</p></div>
 
   <div class="sdiv"></div>
 
@@ -909,17 +916,28 @@ section::before{
       <span class="rsvp-pases-num" id="rsvp-pases-num">…</span>
     </div>
 
-    <div class="rsvp-toggle">
-      <button class="rsvp-toggle-btn" id="btnYes" type="button">Asistiré</button>
-      <button class="rsvp-toggle-btn" id="btnNo" type="button">No podré asistir</button>
+    <div id="rsvp-bandeja">
+      <div class="rsvp-toggle">
+        <button class="rsvp-toggle-btn" id="btnYes" type="button">Asistiré</button>
+        <button class="rsvp-toggle-btn" id="btnNo" type="button">No podré asistir</button>
+      </div>
+
+      <div class="rsvp-fields" id="rsvp-fields" style="display:none"></div>
+
+      <button class="btn btn-gold" id="rsvpSubmitBtn" type="button">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        <span id="rsvp-btn-text">Confirmar asistencia</span>
+      </button>
     </div>
 
-    <div class="rsvp-fields" id="rsvp-fields" style="display:none"></div>
-
-    <button class="btn btn-gold" id="rsvpSubmitBtn" type="button">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-      <span id="rsvp-btn-text">Confirmar asistencia</span>
-    </button>
+    <div class="rsvp-gracias" id="rsvp-gracias" style="display:none">
+      <svg class="rsvp-gracias-icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/><polyline points="8.5 12.5 11 15 16 9.5"/>
+      </svg>
+      <p class="rsvp-gracias-title" id="rsvp-gracias-title"></p>
+      <p class="rsvp-gracias-sub" id="rsvp-gracias-sub"></p>
+      <button class="rsvp-editar-btn" id="rsvp-editar-btn" type="button">Modificar mi respuesta</button>
+    </div>
 
     <p id="rsvp-feedback"></p>
   </div>
@@ -1228,6 +1246,38 @@ aud.addEventListener('pause', ()=>{ playing = false; setVinyl(false); });
   const btnConf  = document.getElementById('rsvpSubmitBtn');
   const btnText  = document.getElementById('rsvp-btn-text');
   const feedEl   = document.getElementById('rsvp-feedback');
+  const bandejaEl = document.getElementById('rsvp-bandeja');
+  const graciasEl = document.getElementById('rsvp-gracias');
+  const gTitleEl  = document.getElementById('rsvp-gracias-title');
+  const gSubEl    = document.getElementById('rsvp-gracias-sub');
+  const editarBtn = document.getElementById('rsvp-editar-btn');
+
+  /* Cierra la bandeja y muestra el agradecimiento con el resumen. */
+  function mostrarGracias(estado, nombres){
+    const lista = (nombres || []).filter(n => n && String(n).trim());
+    if (estado === 'confirmado') {
+      gTitleEl.textContent = '¡Gracias por confirmar!';
+      gSubEl.textContent = lista.length === 1
+        ? 'Te esperamos, ' + lista[0] + '.'
+        : 'Confirmamos ' + lista.length + ' lugares: ' + lista.join(', ') + '.';
+    } else {
+      gTitleEl.textContent = 'Gracias por avisarnos';
+      gSubEl.textContent = 'Lamentamos que no puedas acompañarnos. Te vamos a extrañar.';
+    }
+    bandejaEl.style.display = 'none';
+    graciasEl.style.display = '';
+    editarBtn.disabled = frozen;
+    if (feedEl) { feedEl.textContent = ''; feedEl.style.color = ''; }
+  }
+
+  /* Reabre la bandeja conservando lo ya capturado. */
+  function abrirBandeja(){
+    graciasEl.style.display = 'none';
+    bandejaEl.style.display = '';
+    if (feedEl) { feedEl.textContent = ''; feedEl.style.color = ''; }
+  }
+
+  if (editarBtn) editarBtn.addEventListener('click', () => { if (!frozen) abrirBandeja(); });
   if(!btnConf || !btnYes) return;
 
   if(urlPara){
@@ -1246,7 +1296,7 @@ aud.addEventListener('pause', ()=>{ playing = false; setVinyl(false); });
       const inp = document.createElement('input');
       inp.type = 'text';
       inp.className = 'rsvp-input';
-      inp.placeholder = n === 1 ? 'Escribe tu nombre completo' : 'Nombre completo del invitado ' + (i+1);
+      inp.placeholder = 'Nombre completo del invitado ' + (i+1);
       inp.autocomplete = 'off';
       inp.maxLength = 60;
       inp.value = savedNames[i] || '';
@@ -1290,9 +1340,8 @@ aud.addEventListener('pause', ()=>{ playing = false; setVinyl(false); });
           }
           selectRsvp(d.estado === 'confirmado' ? 'yes' : 'no');
           btnText.textContent = 'Actualizar respuesta';
-          feedEl.textContent = d.estado === 'confirmado'
-            ? '¡Ya tienes confirmada tu asistencia! Puedes actualizar tu respuesta.'
-            : 'Ya tienes registrado que no podrás asistir. Puedes cambiar tu respuesta.';
+          /* Ya hay respuesta guardada: la sección arranca cerrada. */
+          mostrarGracias(d.estado, savedNames);
         }
       })
       .catch(() => {
@@ -1349,10 +1398,7 @@ aud.addEventListener('pause', ()=>{ playing = false; setVinyl(false); });
       if (resp && resp.error) throw new Error(resp.error);
       btnText.textContent = 'Actualizar respuesta';
       btnConf.disabled = false;
-      feedEl.style.color = 'var(--gold-lt)';
-      feedEl.textContent = rsvpChoice === 'yes'
-        ? '¡Tu asistencia ha sido confirmada! Nos vemos pronto.'
-        : 'Hemos registrado que no podrás asistir. ¡Gracias por avisarnos!';
+      mostrarGracias(rsvpChoice === 'yes' ? 'confirmado' : 'declino', nombres);
     })
     .catch(() => {
       btnText.textContent = 'Confirmar asistencia';
