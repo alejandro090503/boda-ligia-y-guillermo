@@ -215,11 +215,11 @@ section::before{
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
 /* ── HELPERS ──────────────────────────────────────────── */
-.lbl{font-size:11px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);text-align:center;display:block;line-height:1.5;max-width:300px;margin-left:auto;margin-right:auto;text-wrap:balance}
-.ttl{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;text-align:center;color:var(--cream);line-height:1.25;margin-top:6px}
+.lbl{font-size:13px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);text-align:center;display:block;line-height:1.5;max-width:340px;margin-left:auto;margin-right:auto;text-wrap:balance}
+.ttl{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;text-align:center;color:var(--cream);line-height:1.25;margin-top:6px}
 .gline{width:72px;height:2px;border-radius:2px;background:linear-gradient(to right,transparent,var(--olive),var(--gold),var(--navy),transparent);margin:18px auto;opacity:.95}
 
-.btn{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:15px 16px;border:1px solid var(--gold);border-radius:7px;background:transparent;color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:12px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;text-decoration:none;cursor:pointer;-webkit-appearance:none;position:relative;overflow:hidden;transition:background .25s, transform .2s var(--spring)}
+.btn{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:16px 18px;border:1.5px solid var(--gold);border-radius:7px;background:rgba(164,128,70,.1);color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;text-decoration:none;cursor:pointer;-webkit-appearance:none;position:relative;overflow:hidden;transition:background .25s, transform .2s var(--spring)}
 .btn:active{transform:scale(.96);background:rgba(164,128,70,.08)}
 .btn+.btn{margin-top:10px}
 .btn-gold{background:var(--gold);color:var(--ink);font-weight:400;box-shadow:0 4px 22px rgba(164,128,70,.25);transition:all .3s var(--spring)}
@@ -260,7 +260,7 @@ section::before{
 .cd-box{text-align:center;padding:18px 6px 14px;background:linear-gradient(160deg,color-mix(in srgb,var(--navy-deep) 52%,transparent),rgba(164,128,70,.06));border:1px solid rgba(164,128,70,.16);border-radius:10px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);transition:transform .3s var(--spring)}
 .cd-box:active{transform:scale(.93)}
 .cd-num{font-family:'Cormorant Garamond',serif;font-variant-numeric:lining-nums tabular-nums;font-size:34px;font-weight:500;color:var(--gold);display:block;line-height:1;will-change:contents}
-.cd-lbl{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--cream);opacity:.66;display:block;margin-top:5px}
+.cd-lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--cream);opacity:.75;display:block;margin-top:5px}
 
 /* ── LOCATION ─────────────────────────────────────────── */
 #location{background:var(--ink)}
@@ -268,15 +268,15 @@ section::before{
 .loc-card::after{content:"";position:absolute;top:0;left:14%;right:14%;height:1px;pointer-events:none;
   background:linear-gradient(to right,transparent,var(--olive),var(--gold),var(--navy),transparent);opacity:.8}
 .loc-card::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent)}
-.loc-type{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-.loc-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--cream);line-height:1.35}
+.loc-type{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.loc-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--cream);line-height:1.35}
 .loc-time{font-family:'Cormorant Garamond',serif;font-variant-numeric:lining-nums;font-size:46px;font-weight:500;color:var(--gold);line-height:1;margin:16px 0 4px}
 .loc-time em{font-family:'Cormorant Garamond',serif;font-style:normal;font-size:13px;letter-spacing:2px;color:var(--gold-lt);opacity:.7;vertical-align:middle}
-.loc-addr{font-size:14px;line-height:1.75;color:#E4DCC0;opacity:.92;margin-bottom:22px}
+.loc-addr{font-size:16px;line-height:1.75;color:var(--cream);margin-bottom:22px}
 
 /* ── CALENDAR ─────────────────────────────────────────── */
 #calendar{background:var(--ink);padding:54px 22px;text-align:center}
-.cal-sub{font-size:13px;color:var(--cream);opacity:.6;line-height:1.9;margin:14px 0 28px}
+.cal-sub{font-size:15px;color:var(--cream);opacity:.75;line-height:1.9;margin:14px 0 28px}
 
 /* ── ITINERARY ────────────────────────────────────────── */
 #itinerary{background:var(--ink)}
@@ -290,7 +290,7 @@ section::before{
 .tl-row:nth-child(2) .tl-dot{box-shadow:0 0 0 3px rgba(164,128,70,.28)}
 .tl-dot.on{transform:scale(1)}
 .tl-ev{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--cream);font-weight:400;line-height:1.2}
-.tl-de{font-size:14px;color:var(--cream);opacity:.78;margin-top:5px;line-height:1.5}
+.tl-de{font-size:16px;color:var(--cream);opacity:.85;margin-top:5px;line-height:1.5}
 
 /* ── HOSPEDAJE (sección conservada, adaptada al tema) ──── */
 #lodging{background:var(--ink)}
@@ -307,12 +307,12 @@ section::before{
 .kp-card::before{content:'';position:absolute;top:0;left:15%;right:15%;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent)}
 .kp-icons{display:flex;justify-content:center;gap:28px;margin-bottom:22px;color:var(--gold);opacity:.8}
 .kp-icons svg{width:30px;height:30px}
-.kp-msg{font-family:'Cormorant Garamond',serif;font-size:16px;line-height:1.85;color:var(--cream);opacity:.85;font-style:italic}
-.kp-note{font-size:11px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold);opacity:.85;margin-top:18px;line-height:1.6}
+.kp-msg{font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1.85;color:var(--cream);opacity:.85;font-style:italic}
+.kp-note{font-size:13px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold);opacity:.85;margin-top:18px;line-height:1.6}
 
 /* ── GIFTS ────────────────────────────────────────────── */
 #gifts{background:var(--ink)}
-.gf-sub{text-align:center;font-size:13px;color:var(--cream);opacity:.62;line-height:1.9;margin:14px 0 28px}
+.gf-sub{text-align:center;font-size:16px;color:var(--cream);opacity:.85;line-height:1.9;margin:14px 0 28px}
 .gf-card{display:block;text-decoration:none;background:var(--ink2);border:1px solid rgba(164,128,70,.16);border-radius:10px;padding:22px 22px;margin-bottom:12px;position:relative;overflow:hidden;transition:transform .25s var(--spring),border-color .25s}
 
 /* ── caja de regalo que se abre con confeti ── */
@@ -369,14 +369,14 @@ section::before{
 
 /* ── DRESS CODE (sección conservada, adaptada al tema) ─── */
 #dresscode{background:var(--ink);text-align:center}
-.dc-sub{font-size:15px;color:#CFC8AC;line-height:1.9;margin:14px 0 6px}
-.dc-sub em{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--gold);letter-spacing:2px}
+.dc-sub{font-size:17px;color:var(--cream);line-height:1.9;margin:14px 0 6px}
+.dc-sub em{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--gold);letter-spacing:2px}
 .dc-figures{display:flex;align-items:stretch;justify-content:center;gap:0;margin-top:18px;max-width:420px;margin-left:auto;margin-right:auto}
 .dc-fig{flex:1;display:flex;flex-direction:column;align-items:center;padding:14px 8px}
 .dc-divider{width:1px;flex-shrink:0;margin:10px 0;background:linear-gradient(to bottom,transparent,var(--gold) 18%,var(--gold) 82%,transparent)}
 .dc-svg{height:150px;width:auto;object-fit:contain}
-.dc-fig-name{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--cream);letter-spacing:3px;margin-top:14px;text-transform:uppercase}
-.dc-fig-hint{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--gold);margin-top:6px;text-align:center;line-height:1.5}
+.dc-fig-name{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--cream);letter-spacing:3px;margin-top:14px;text-transform:uppercase}
+.dc-fig-hint{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--gold);margin-top:6px;text-align:center;line-height:1.5}
 .dress-reserved{font-size:15px;color:var(--cream);opacity:.9;line-height:1.75;max-width:340px;margin:30px auto 0}
 .dress-reserved b{color:var(--gold);font-weight:400}
 .dc-reveal-btn{display:inline-flex;align-items:center;gap:8px;margin:30px auto 0;padding:12px 32px;border:1.5px solid var(--gold-lt);border-radius:40px;background:transparent;color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:16px;letter-spacing:2px;cursor:pointer;position:relative;overflow:hidden;transition:all .4s ease}
@@ -392,10 +392,16 @@ section::before{
 .dc-notice-text{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--cream);line-height:1.7}
 .dc-notice-text b{color:var(--gold);font-weight:400}
 .dc-blue-swatch{width:60px;height:60px;border-radius:50%;background:#6B9AC4;margin:8px auto;border:2px solid var(--gold-dim);box-shadow:0 2px 12px rgba(107,154,196,.3)}
+#scroll-hint{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:8000;display:flex;flex-direction:column;align-items:center;gap:2px;pointer-events:none;overflow:hidden;padding:9px 22px 7px;border-radius:24px;font-family:'Cormorant Garamond',serif;font-size:11px;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--cream);background:linear-gradient(180deg,rgba(250,246,238,.55) 0%,rgba(230,224,212,.3) 100%);-webkit-backdrop-filter:blur(10px) saturate(1.5);backdrop-filter:blur(10px) saturate(1.5);border:1px solid rgba(164,128,70,.3);box-shadow:0 8px 22px rgba(58,58,50,.18),0 2px 6px rgba(58,58,50,.1),inset 0 1px 0 rgba(255,255,255,.5);transition:opacity .5s;animation:shFloat 3.2s ease-in-out infinite}
+#scroll-hint .sh-chev{width:14px;height:14px;animation:shBob 1.8s ease-in-out infinite}
+#scroll-hint .sh-chev svg{width:100%;height:100%;stroke:var(--gold);stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+#scroll-hint.is-hidden{opacity:0}
+@keyframes shBob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+@keyframes shFloat{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-3px)}}
 
 /* ── FAMILY ───────────────────────────────────────────── */
 #family{background:var(--ink)}
-.fam-ttl{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:300;font-style:italic;color:var(--gold);text-align:center;margin:30px 0 16px}
+.fam-ttl{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;font-style:italic;color:var(--gold);text-align:center;margin:30px 0 16px}
 .fam-card{background:var(--ink2);border:1px solid rgba(164,128,70,.13);border-radius:10px;padding:18px 20px;margin-bottom:10px;text-align:center;position:relative;overflow:hidden;transition:transform .3s var(--spring)}
 .fam-card::after{content:"";position:absolute;left:0;top:18%;bottom:18%;width:2px;pointer-events:none;
   background:linear-gradient(to bottom,transparent,var(--olive),transparent);opacity:.85;width:3px}
@@ -645,7 +651,7 @@ section::before{
     <p class="loc-type">✦  Ceremonia Religiosa</p>
     <h3 class="loc-name">Cantapiedra</h3>
     <div class="loc-time">3:30 <em>PM</em></div>
-    <p class="loc-addr">Callej&oacute;n Santo Tom&aacute;s 28 &middot; Temixco, Morelos</p>
+    <p class="loc-addr">Callejón Santo Tomás 28<br>Col. Santo Domingo, Temixco, Morelos, C.P. 62587</p>
     <a href="https://maps.app.goo.gl/3k6DVaH9CSfYDffh7" target="_blank" rel="noopener" class="btn">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
       Ver en GPS / Google Maps
@@ -656,7 +662,7 @@ section::before{
     <p class="loc-type">✦  Recepción</p>
     <h3 class="loc-name">Cantapiedra</h3>
     <div class="loc-time">5:00 <em>PM</em></div>
-    <p class="loc-addr">Callej&oacute;n Santo Tom&aacute;s 28 &middot; Temixco, Morelos</p>
+    <p class="loc-addr">Callejón Santo Tomás 28<br>Col. Santo Domingo, Temixco, Morelos, C.P. 62587</p>
     <a href="https://maps.app.goo.gl/3k6DVaH9CSfYDffh7" target="_blank" rel="noopener" class="btn">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
       Ver en GPS / Google Maps
@@ -738,36 +744,7 @@ section::before{
   <div class="gline"></div>
   <p class="gf-sub">Si deseas obsequiarnos algo especial,<br>compartimos contigo nuestras opciones.</p>
 
-  <div class="gbx" id="giftBox">
-    <button type="button" class="gbx-present" id="giftBtn" aria-label="Abrir la mesa de regalos" aria-expanded="false" aria-controls="giftLinks">
-      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <linearGradient id="gbxBody" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#5C1414"/><stop offset="100%" stop-color="#2C0707"/>
-          </linearGradient>
-          <linearGradient id="gbxTop" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#7A1D1B"/><stop offset="100%" stop-color="#3D0C0B"/>
-          </linearGradient>
-          <linearGradient id="gbxRib" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#E8D5A3"/><stop offset="100%" stop-color="#B4954F"/>
-          </linearGradient>
-        </defs>
-        <rect x="22" y="52" width="76" height="54" rx="6" fill="url(#gbxBody)"/>
-        <rect x="54" y="52" width="12" height="54" fill="url(#gbxRib)" opacity=".9"/>
-        <g class="gbx-lid">
-          <rect x="16" y="40" width="88" height="17" rx="5" fill="url(#gbxTop)"/>
-          <rect x="54" y="40" width="12" height="17" fill="url(#gbxRib)" opacity=".9"/>
-          <path d="M60 41 C48 22 30 26 39 41 Z" fill="url(#gbxRib)"/>
-          <path d="M60 41 C72 22 90 26 81 41 Z" fill="url(#gbxRib)"/>
-          <circle cx="60" cy="40" r="6" fill="url(#gbxRib)"/>
-        </g>
-      </svg>
-    </button>
-    <div class="gbx-confetti" id="giftConfetti" aria-hidden="true"></div>
-    <p class="gbx-tap">Toca el regalo</p>
-  </div>
-
-  <div class="gift-links" id="giftLinks" hidden>
+  <div class="gift-links" id="giftLinks">
     <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/52024098" class="gf-card" target="_blank" rel="noopener">
       <span class="gf-brand gf-brand--lv"><img src="liverpool.svg" alt="Liverpool" width="121" height="28" loading="lazy"></span>
       <span class="gf-nt">Mesa de regalos · Evento 52024098 →</span>
@@ -827,12 +804,7 @@ section::before{
       <div class="dc-fig-hint">Traje formal<br>Corbata o moño</div>
     </div>
   </div>
-  <div style="text-align:center">
-    <button class="dc-reveal-btn" id="dcRevealBtn" aria-expanded="false">
-      <span class="dc-sparkle">✦</span> Toca para abrir <span class="dc-sparkle">✦</span>
-    </button>
-  </div>
-  <div class="dc-notices" id="dcNotices">
+  <div class="dc-notices" id="dcNotices" style="max-height:none;opacity:1">
     <div class="dc-notice">
       <div class="dc-notice-icon">🤍</div>
       <p class="dc-notice-text">Por favor, <b>evitar el color blanco</b>:<br>está reservado para la novia.</p>
@@ -861,18 +833,32 @@ section::before{
   <div class="gline"></div>
 
   <p class="fam-ttl">Padres de la Novia</p>
-  <div class="fam-card"><p class="fam-nms">Ligia Ivonne Carvajal Valiente<br><span class="fam-sep">&amp;</span><br>Marcial Lizarraga Tortajada</p></div>
+  <div class="fam-card"><p class="fam-nms">Sra. Ligia Ivonne Carvajal Valiente<br><span class="fam-sep">&amp;</span><br>Sr. Marcial Lizarraga Tortajada</p></div>
 
   <div class="sdiv"></div>
 
   <p class="fam-ttl">Padres del Novio</p>
-  <div class="fam-card"><p class="fam-nms">María de Lourdes Aguilar Ferrer<br><span class="fam-sep">&amp;</span><br>Mario Torres López</p></div>
+  <div class="fam-card"><p class="fam-nms">Sra. María de Lourdes Aguilar Ferrer<br><span class="fam-sep">&amp;</span><br>Sr. Mario Torres Aguilar</p></div>
 
   <div class="sdiv"></div>
 
-  <p class="fam-ttl">Padrinos</p>
-  <!-- PENDIENTE: el cliente aún no confirma los nombres de los padrinos -->
-  <div class="fam-card"><p class="fam-role">✦  Padrinos de Velación</p><p class="fam-nms">Por confirmar</p></div>
+  <p class="fam-ttl">Padrinos de Velación</p>
+  <div class="fam-card"><p class="fam-nms">Las dos parejas de padres</p></div>
+
+  <div class="sdiv"></div>
+
+  <p class="fam-ttl">Padrinos de Argollas</p>
+  <div class="fam-card"><p class="fam-nms">Sr. Mario Torres Aguilar<br><span class="fam-sep">&amp;</span><br>Sra. Myriam del Carmen Mojica Domínguez</p></div>
+
+  <div class="sdiv"></div>
+
+  <p class="fam-ttl">Padrinos de Arras</p>
+  <div class="fam-card"><p class="fam-nms">Sr. Arturo Centeno<br><span class="fam-sep">&amp;</span><br>Sra. Erika Lorena Merlos Preciado</p></div>
+
+  <div class="sdiv"></div>
+
+  <p class="fam-ttl">Padrinos de Lazo</p>
+  <div class="fam-card"><p class="fam-nms">Sr. Juan Antonio Aguilar Varela<br><span class="fam-sep">&amp;</span><br>Sra. Andrea Ruiz Franch</p></div>
 </section>
 
 <!-- ═══════════════ 12. GALERÍA — CARRUSEL 3D (conservada) ══ -->
@@ -938,6 +924,12 @@ section::before{
     <p id="rsvp-feedback"></p>
   </div>
 </section>
+
+<!-- INDICADOR DESLIZA -->
+<div id="scroll-hint" aria-hidden="true">
+  <span>Desliza</span>
+  <span class="sh-chev"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+</div>
 
 <!-- ═══════════════ 14. FOOTER ═══════════════════════ -->
 <footer id="footer">
@@ -1114,14 +1106,6 @@ function scrollAnims() {
   gsap.from('.dc-sub', { opacity:0, y:18, duration:.65, ease, immediateRender:false, scrollTrigger:{ trigger:'#dresscode', start:'top 82%', once:true } });
   gsap.from('.dc-fig', { opacity:0, y:30, duration:.8, stagger:.18, ease, immediateRender:false, scrollTrigger:{ trigger:'.dc-figures', start:'top 84%', once:true } });
   gsap.fromTo('.dc-divider', {scaleY:0}, {scaleY:1, duration:1, ease, immediateRender:false, scrollTrigger:{ trigger:'.dc-figures', start:'top 84%', once:true }});
-  gsap.from('.dc-reveal-btn', { opacity:0, y:16, duration:.6, ease, immediateRender:false, scrollTrigger:{ trigger:'.dc-reveal-btn', start:'top 88%', once:true } });
-  document.getElementById('dcRevealBtn').addEventListener('click', function(){
-    var n = document.getElementById('dcNotices');
-    n.style.maxHeight = '600px';
-    n.style.opacity = '1';
-    this.style.display = 'none';
-  });
-
   gsap.from('.fam-ttl', { opacity:0, y:18, duration:.6, stagger:.2, ease, immediateRender:false, scrollTrigger:{ trigger:'#family', start:'top 78%', once:true } });
   gsap.from('.fam-card', { opacity:0, y:20, duration:.55, stagger:.08, ease, immediateRender:false, scrollTrigger:{ trigger:'#family', start:'top 78%', once:true } });
   gsap.from('#footer > *', { opacity:0, y:20, duration:.6, stagger:.1, ease, immediateRender:false, scrollTrigger:{ trigger:'#footer', start:'top 90%', once:true } });
@@ -1221,60 +1205,6 @@ window.startMusic = function(){
 // el estado del disco lo dicta el propio <audio>, no una bandera aparte
 aud.addEventListener('play',  ()=>{ playing = true;  setVinyl(true);  });
 aud.addEventListener('pause', ()=>{ playing = false; setVinyl(false); });
-
-/* GIFTS: caja de regalo que se abre con confeti */
-(function(){
-  var box   = document.getElementById('giftBox');
-  var btn   = document.getElementById('giftBtn');
-  var conf  = document.getElementById('giftConfetti');
-  var links = document.getElementById('giftLinks');
-  if(!box || !btn || !links) return;
-
-  function abrir(){
-    if(box.classList.contains('opened')) return;
-    btn.classList.add('shake');
-    btn.setAttribute('aria-expanded','true');
-
-    setTimeout(function(){
-      box.classList.add('opened');
-
-      // confeti con la paleta de la invitacion
-      var colors = ['#A48046','#D4B87A','#5B7A4A','#8A9E7C','#7BA3C4','#3B6B8A','#E6E0D4','#FAF6EE'];
-      var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if(!reduced && window.gsap){
-        for(var i=0;i<34;i++){
-          var p = document.createElement('div');
-          p.className = 'gbx-confetti-piece';
-          p.style.background = colors[i % colors.length];
-          var sz = 5 + Math.random()*7;
-          p.style.width = sz+'px'; p.style.height = sz+'px';
-          p.style.borderRadius = Math.random() > .5 ? '50%' : '2px';
-          conf.appendChild(p);
-          var ang = Math.random()*Math.PI*2;
-          var d   = 55 + Math.random()*105;
-          gsap.fromTo(p,
-            {opacity:1,x:0,y:0,scale:1,rotation:0},
-            {x:Math.cos(ang)*d, y:Math.sin(ang)*d - 46, opacity:0, scale:.2,
-             rotation:Math.random()*720-360, duration:.9+Math.random()*.5,
-             ease:'power2.out', delay:Math.random()*.12,
-             onComplete:function(){ var t=this.targets()[0]; if(t && t.remove) t.remove(); }});
-        }
-      }
-
-      links.hidden = false;
-      if(window.gsap){
-        gsap.fromTo(links.children,
-          {opacity:0,y:22},
-          {opacity:1,y:0,duration:.7,stagger:.12,ease:'power2.out',delay:.15});
-      }
-      if(window.ScrollTrigger) ScrollTrigger.refresh();
-    }, 480);
-
-    setTimeout(function(){ btn.style.display = 'none'; }, 1200);
-  }
-
-  btn.addEventListener('click', abrir);
-})();
 
 /* ── RSVP PANEL INTEGRATION (patrón estándar) ─────────── */
 (function(){
@@ -1431,6 +1361,18 @@ aud.addEventListener('pause', ()=>{ playing = false; setVinyl(false); });
       feedEl.textContent = 'No pudimos registrar tu respuesta. Revisa tu conexión e inténtalo de nuevo.';
     });
   });
+})();
+
+// INDICADOR DESLIZA
+(function(){
+  var hint=document.getElementById('scroll-hint');
+  if(!hint) return;
+  function upd(){
+    var nearBottom = (window.innerHeight + window.scrollY) >= (document.body.scrollHeight - 160);
+    hint.classList.toggle('is-hidden', nearBottom);
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd);
 })();
 
 </script>
